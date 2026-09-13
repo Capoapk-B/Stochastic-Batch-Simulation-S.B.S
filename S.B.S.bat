@@ -7,7 +7,6 @@ chcp 65001 >nul
 :debutsbs
 set dossier=AP
 
-REM Creer le dossier de base "AP" s'il n'existe pas
 if not exist "%dossier%" (
     mkdir "%dossier%"
     echo.
@@ -15,7 +14,6 @@ if not exist "%dossier%" (
     echo.
 )
 
-REM Creer les sous-dossiers a l'interieur du dossier "AP" s'ils n'existent pas
 if not exist "%dossier%\utilisateur" (
     mkdir "%dossier%\utilisateur"
     echo.
@@ -37,7 +35,6 @@ if not exist "%dossier%\action" (
     echo.
 )
 
-REM Creer les sous-dossiers a l'interieur du dossier "AP" s'ils n'existent pas
 if not exist "%dossier%\utilisateur" (
     mkdir "%dossier%\utilisateur"
     echo.
@@ -45,7 +42,6 @@ if not exist "%dossier%\utilisateur" (
     echo.
 )
 
-REM Creer les sous-dossiers a l'interieur du dossier "connaissance" s'ils n'existent pas
 if not exist "%dossier%\connaissance\apris" (
     mkdir "%dossier%\connaissance\apris"
     echo.
