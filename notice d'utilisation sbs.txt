@@ -1,0 +1,65 @@
+📖 Notice d'utilisation : Stochastic Batch Simulation (SBS)
+
+Fichier exécutable : `SBSbat`
+Environnement : Windows (Invite de commande / PowerShell)
+
+Le programme Stochastic Batch Simulation est un environnement expérimental regroupant des écosystèmes virtuels et un modèle de génération de texte basé sur les chaînes de Markov
+
+ 1 Démarrage et Installation
+
+1 Double-cliquez sur le fichier `SBSbat` pour lancer le programme
+
+
+2 Premier lancement : Le script générera automatiquement l'arborescence de dossiers dont il a besoin pour fonctionner (`AP`, `AP\utilisateur`, `AP\connaissance\apris` et `AP\action`)
+
+
+3 Vous arriverez ensuite sur le menu principal animé Appuyez sur la touche correspondante au clavier (1, 2, 3, 4, 5 ou Q) pour faire votre choix
+
+
+ 2 Les Simulations Visuelles (Modules 1, 2 et 3)
+
+Ces modules sont des simulations autonomes (automates cellulaires) Une fois lancées, vous n'avez rien à faire à part observer l'évolution du système
+
+ [1] 🧬 (Empires) : Quatre factions de couleurs s'étendent et s'affrontent sur une grille avec des règles de surpopulation
+
+
+ [2] 🪰 vs 🐛 vs 🕷️ vs 🦟 (Insectes) : Un écosystème où s'applique une chaîne de prédation (Mouche -> Chenille -> Araignée -> Moustique)
+
+
+ [3] 🐛 🐜 vs 🐸 vs 🪱 🕷️ (La Mare) : Un environnement complexe avec des grenouilles qui chassent, et des fleurs qui provoquent des mutations chez les insectes
+
+🛑 Pour quitter une simulation en cours : Appuyez simultanément sur `CTRL + C` sur votre clavier
+
+
+ 3 Le Générateur de Texte Markovien (Module 4)
+
+Ce module est une intelligence artificielle rudimentaire qui apprend à parler en lisant un texte Il nécessite une préparation
+
+Prérequis : Avant d'utiliser ce module, vous devez placer un fichier texte brut nommé exactement `livretxt` dans le dossier `ap\action\` (qui a été créé au premier lancement)
+
+Une fois dans le menu du Module 4, suivez cet ordre :
+
+ Étape A : [2] APPRENTISSAGE
+Lancez cette option pour que le script lise votre fichier `livre.txt` et découpe les mots pour créer sa base de données d'apprentissage Patientez jusqu'à la fin du traitement
+
+
+ Étape B : [3] ANALYSE (Optionnel)
+Cet outil audite la base de connaissances fraîchement créée pour vérifier la stabilité du modèle et chercher les "mots fragiles" (culs-de-sac) Le programme générera un rapport de santé consultable dans le fichier `ap\utilisateur\rapport_audit.txt`
+
+
+ Étape C : [1] GO
+C'est le générateur Le programme va vous afficher : `👉 :` Tapez un mot de départ et appuyez sur Entrée pour que l'algorithme génère la suite de la phrase Tapez `quitter` pour sortir de ce mode
+
+
+ 4 Planche de Galton (Module 5)
+
+Ce module permet de lancer une simulation probabiliste
+Note : Il fait appel à un script externe Assurez-vous que le fichier `galton.ps1` est bien présent dans le sous-dossier "ap\action" pour que l'option fonctionne
+
+
+ 5 Dépannage courant
+
+ Le texte clignote de façon illisible : Le terminal Windows redimensionne la fenêtre Laissez le script tourner quelques secondes ou agrandissez légèrement la fenêtre manuellement
+ Le module 4 se coupe et renvoie une erreur : Vérifiez que vous avez bien placé un fichier `livretxt` dans `ap\action\` avant de lancer l'apprentissage
+
+ Les calculs sont lents : Les modules 4 et 5 s'appuient sur PowerShell en arrière-plan Les performances dépendent de votre ordinateur, en particulier lors de la phase d'apprentissage d'un très long texte
