@@ -1,0 +1,57 @@
+📖 User Manual: Stochastic Batch Simulation (SBS)
+Executable file: SBS.bat
+
+Environment: Windows (Command Prompt / PowerShell)
+
+The Stochastic Batch Simulation program is an experimental environment featuring virtual ecosystems and a text generation model based on Markov chains.
+
+1. Startup and Installation
+Double-click on the SBS.bat file to launch the program.
+
+First launch: The script will automatically generate the folder tree it needs to work properly (AP, AP\utilisateur, AP\connaissance\apris, and AP\action).
+
+You will then arrive at the animated main menu. Press the corresponding key on your keyboard (1, 2, 3, 4, 5, or Q) to make your choice.
+
+2. Visual Simulations (Modules 1, 2, and 3)
+These modules are standalone simulations (cellular automata). Once launched, you have nothing to do but observe the evolution of the system.
+
+[1] 🧬 (Empires): Four color factions expand and clash on a grid with overpopulation rules.
+
+[2] 🪰 vs 🐛 vs 🕷️ vs 🦟 (Insects): An ecosystem based on a predation chain (Fly -> Caterpillar -> Spider -> Mosquito).
+
+[3] 🐛 🐜 vs 🐸 vs 🪱 🕷️ (The Pond): A complex environment featuring hunting frogs and flowers that trigger mutations in insects.
+
+🛑 To quit a running simulation: Press CTRL + C simultaneously on your keyboard.
+
+3. Markovian Text Generator (Module 4)
+This module is a rudimentary artificial intelligence that learns to speak by reading a text. It requires some setup.
+
+Prerequisite: Before using this module, you must place a plain text file named exactly livre.txt inside the ap\action\ folder (which was created during the first launch).
+
+Once in the Module 4 menu, follow this sequence:
+
+Step A: [2] LEARNING (APPRENTISSAGE)
+
+Run this option so the script can read your livre.txt file, split the words, and create its learning database. Wait until the processing is complete.
+
+Step B: [3] ANALYSIS (ANALYSE) (Optional)
+
+This tool audits the freshly created knowledge base to check the model's stability and look for "fragile words" (dead ends). The program will generate a health report available in the ap\utilisateur\rapport_audit.txt file.
+
+Step C: [1] GO
+
+This is the generator itself. The program will display: 👉 :
+
+Type a starting word and press Enter for the algorithm to generate the rest of the sentence. Type quitter to exit this mode.
+
+4. Galton Board (Module 5)
+This module runs a probabilistic simulation.
+
+Note: It relies on an external script. Ensure that the galton.ps1 file is present in the ap\action subfolder for this option to work.
+
+5. Common Troubleshooting
+The text flashes unreadably: The Windows terminal is trying to resize the window. Let the script run for a few seconds, or slightly enlarge the window manually.
+
+Module 4 crashes and returns an error: Check that you have indeed placed a livre.txt file in ap\action\ before launching the learning phase.
+
+Calculations are slow: Modules 4 and 5 run PowerShell in the background. Performance depends on your computer's specs, especially during the learning phase of a very long text.
